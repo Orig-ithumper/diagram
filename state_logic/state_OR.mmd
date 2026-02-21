@@ -1,0 +1,11 @@
+flowchart LR
+    subgraph Oregon Logic
+        A[Start] --> B[Check fingerprint requirement]
+        B --> C{Prints required?}
+        C -->|Yes| D[Collect fingerprints]
+        C -->|No| E[Skip]
+        D --> F[Prepare filing]
+        E --> F
+        F --> G[Submit to court]
+        G --> H[End]
+    end
