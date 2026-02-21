@@ -1,0 +1,31 @@
+flowchart LR
+
+    subgraph Client
+        C1[Intake Completed]
+        C2[Upload Documents]
+        C3[Receive Submission Notification]
+        C4[Receive Timeline]
+        C5[Ask Questions]
+    end
+
+    subgraph Ops
+        O1[Review Intake]
+        O2[Validate Identity Info]
+        O3[Send Follow-Up Questions]
+        O4[Validate Documents]
+        O5[Request Missing Docs]
+        O6[Apply State Logic]
+        O7[Generate Filing Packet]
+        O8[Prepare Packet for Attorney]
+        O9[Notify Client]
+        O10[Track Court Updates]
+    end
+
+    subgraph Legal
+        L1[Review Filing Packet]
+        L2[Confirm Legal Accuracy]
+        L3[Sign Documents]
+        L4[Approve for Submission]
+    end
+
+    C1 --> O1 --> O4 --> O6 --> O8 --> L1 --> L4 --> O9 --> C3
