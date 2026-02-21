@@ -1,0 +1,10 @@
+flowchart LR
+    subgraph Texas Logic
+        A[Start] --> B[Check eligibility requirements]
+        B --> C{Eligible?}
+        C -->|Yes| D[Collect required documents]
+        C -->|No| E[Stop]
+        D --> F[Prepare filing packet]
+        F --> G[Submit to court or agency]
+        G --> H[End]
+    end
