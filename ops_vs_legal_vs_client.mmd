@@ -1,0 +1,48 @@
+flowchart LR
+
+    subgraph Intake_Completed
+        A1[Verify Intake Completeness]
+        A2[Check Identity Information]
+        A3[Confirm Eligibility Answers]
+        A4[Flag Missing or Contradictory Data]
+        A5[Send Follow‑Up Questions]
+        A6[Mark Intake as Reviewed]
+    end
+
+    subgraph Documents_Uploaded
+        B1[Validate Document Quality]
+        B2[Check Required Docs by State]
+        B3[Request Missing or Unreadable Docs]
+        B4[Confirm Document Set Complete]
+        B5[Begin State-Specific Checks]
+    end
+
+    subgraph Prepare_Filing
+        C1[Apply State Eligibility Logic]
+        C2[Generate Required Forms]
+        C3[Populate Templates with Client Data]
+        C4[Cross-Check Against State Rules]
+        C5[Assemble Filing Packet]
+        C6[Prepare for Attorney Review]
+    end
+
+    subgraph Review_Filing
+        D1[Attorney Reviews Packet]
+        D2[Confirm Legal Accuracy]
+        D3[Verify All Required Docs Included]
+        D4[Sign Filings]
+        D5[Approve for Submission]
+    end
+
+    subgraph Client_Notified
+        E1[Notify Client of Submission]
+        E2[Provide Expected Timeline]
+        E3[Answer Client Questions]
+        E4[Track Court Updates]
+        E5[Mark Case as Monitoring]
+    end
+
+    A6 --> B1
+    B4 --> C1
+    C6 --> D1
+    D5 --> E1
