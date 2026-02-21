@@ -1,0 +1,36 @@
+flowchart LR
+
+    subgraph Intake_Completed
+        A1[Intake Reviewed]
+    end
+
+    subgraph Documents_Uploaded
+        B1[Docs Validated]
+    end
+
+    subgraph State_Logic
+        CA[California Logic\nPC 1203.4 / 1203.4a\nDA notice rules]
+        WA[Washington Logic\nRCW 9.94A / 9.96.060\nVacate rules]
+        OR[Oregon Logic\nORS 137.225\nFingerprint requirements]
+    end
+
+    subgraph Prepare_Filing
+        C1[Generate State Forms]
+        C2[Assemble Packet]
+    end
+
+    subgraph Review_Filing
+        D1[Attorney Review]
+        D2[Attorney Signs]
+    end
+
+    subgraph Client_Notified
+        E1[Notify Client]
+        E2[Provide Timeline]
+    end
+
+    A1 --> B1 --> CA --> C1
+    A1 --> B1 --> WA --> C1
+    A1 --> B1 --> OR --> C1
+
+    C2 --> D1 --> E1
