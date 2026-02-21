@@ -1,0 +1,9 @@
+flowchart LR
+    subgraph Washington Logic
+        A[Start] --> B[Check vacate eligibility]
+        B --> C{Eligible?}
+        C -->|Yes| D[Prepare vacate petition]
+        C -->|No| E[Stop]
+        D --> F[Submit to court]
+        F --> G[End]
+    end
