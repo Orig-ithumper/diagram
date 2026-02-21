@@ -1,0 +1,9 @@
+flowchart LR
+    subgraph California Logic
+        A[Start] --> B[Check eligibility]
+        B --> C{Eligible?}
+        C -->|Yes| D[Prepare filing]
+        C -->|No| E[Stop]
+        D --> F[Submit to court]
+        F --> G[End]
+    end
